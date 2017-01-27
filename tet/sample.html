@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- 한픽셀 사이즈 20 x 20 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+html, body,
+div, span,
+dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+blockquote, p, address, pre, cite,
+form, fieldset, input, textarea, select,
+table, th, td 
+{
+	margin:0;
+	padding:0;
+}
+
+#tetArea
+{
+/* 	width: 200px; */
+/* 	height: 400px; */
+	background-color: black;
+	font-size: 0px;
+	float: left;
+}
+
+#occupyArea
+{
+	width: 400px;
+	float: left;
+}
+
+</style>
+<script type="text/javascript" src="option.js"></script>
+<script type="text/javascript" src="initUtil.js"></script>
+<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript" src="background/backGround.js"></script>
+<script type="text/javascript" src="block/block.js"></script>
+<script type="text/javascript" src="block/blockDefine.js"></script>
+<script type="text/javascript" src="block/blockType.js"></script>
+<script type="text/javascript" src="block/blockImpl.js"></script>
+<script type="text/javascript" src="block/blockEvent.js"></script>
+<script type="text/javascript" src="background/cell.js"></script>
+<script type="text/javascript" src="score.js"></script>
+<script type="text/javascript" src="eventHandler.js"></script>
+<script type="text/javascript" src="upTris.js"></script>
+</head>
+<body onload="main()">
+
+<div id="tetArea" tabindex="1">
+
+</div>
+
+<div id="score">
+	<div><span>블럭 점수 : </span><span id="occupyBlockNumberScore"></span></div>
+	<div><span>시간 점수 : </span><span id="runningTimeScore"></span></div>
+	<div><span>합계 : </span><span id="totalScore"></span></div>
+</div>
+<div id="occupyArea"></div>
+
+<script type="text/javascript">
+
+function main () {
+	
+	upTris.init('tetArea');
+	eventHandler.init('tetArea');
+	upTris.run();
+	
+}
+
+</script>
+
+</body>
+</html>
